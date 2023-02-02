@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "mcTcNJp8AqR7g8u94JmzaYHbMnFRD//HLbW+Do2UhYeFv7fJyOW0SaLK9O2yEBNo69vZCf4Nn9hcQerIV1YXqw==",
+  "success": true,
+  "projectFilePath": "D:\\Mostafa\\ASP.NETCoreExercises\\Atriya\\DevCard\\DevCard.MVC\\DevCard.MVC.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Mostafa\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.28\\microsoft.netcore.app.host.win-x64.3.1.28.nupkg.sha512"
+  ],
+  "logs": []
+}
