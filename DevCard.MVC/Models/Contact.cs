@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System.ComponentModel.DataAnnotations;
 
 namespace DevCard.MVC.Models
 {
@@ -9,10 +10,11 @@ namespace DevCard.MVC.Models
 		[MaxLength(100, ErrorMessage = "حداکثر طول نام، ۱۰۰ کاراکتر است")]
 		public string Name { get; set; }
 		[EmailAddress(ErrorMessage = "مقدار وارد شده ایمیل صحیح نیست")]
-		[Required]
+		[Required(ErrorMessage = "این فیلد اجباری است")]
 		public string Email { get; set; }
 		public string Message { get; set; }
-		public string Service { get; set; }
+		public int Service { get; set; }
+		public SelectList Services { get; set; }
 
 	}
 }
