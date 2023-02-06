@@ -1,4 +1,5 @@
-﻿using DevCard.MVC.Models;
+﻿using DevCard.MVC.Data;
+using DevCard.MVC.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -21,6 +22,13 @@ namespace DevCard.MVC.Controllers
         {
             return View();
         }
+
+        public IActionResult ProjectDetails(long id)
+        {
+            Project project = ProjectStore.GetProjectBy(id);
+            return View(project??new Project(long.MinValue, "", "","",""));
+        }
+
         [HttpGet]
         public IActionResult Contact()
         {
@@ -47,15 +55,8 @@ namespace DevCard.MVC.Controllers
             };
             ViewBag.Success = "پیغام شما با موفقیت ارسال شد. با تشکر";
             return View(model);
-            //return RedirectToAction("Index");
         }
 
-        //[HttpPost]
-        //public JsonResult Contact(IFormCollection form)
-        //{
-        //    var name = form["name"];
-        //    return Json(Ok());
-        //}
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
